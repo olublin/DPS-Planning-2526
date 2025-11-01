@@ -16,15 +16,15 @@ This file gives the geometry of all 851 planning units, with an index column `pu
 
 **Output Files:**
 
-`dist_matrix_0_9.csv`
+-`dist_matrix_0_9.csv`
 
-`dist_matrix_10_19.csv`
+-`dist_matrix_10_19.csv`
 
 ...
 
-`dist_matrix_840_849.csv`
+-`dist_matrix_840_849.csv`
 
-`dist_matrix_850_850.csv`
+-`dist_matrix_850_850.csv`
 
 The intervals can differ, as the arguments `lower_bound`, `upper_bound`, and `interval` can be set by the user on line 98.
 
@@ -37,13 +37,13 @@ The matrix processing file `construct_matrix.py` takes as an argument a zip file
 
 **Input File:**
 
-`isochron_results.zip` (or anything)
+-`isochron_results.zip` (or anything)
 
 The script unpacks the zip file, sorts the files by name (which will correctly sort the planning units in sequential order if the names of the individual `.csv` files match the format described in the `Distance-Matrix` README). The script then processes the matrix, as described in more depth in the 'Distance-Matrix' README, to produce a full approximate driving distance matrix for all 851 planning units. Note: if the files were batched incorrectly in the previous section such that there are less than or fewer than 851 columns in all of the zipfile, an error will be thrown. A `.csv` file containing the full 851 by 851 distance matrix will be outputted as the following:
 
 **Output File:**
 
-`dist_matrix_final.csv`
+-`dist_matrix_final.csv`
 
 Dependencies, details and more information about running the `get_distances.py` script can be found in the `Distance-Matrix` folder.
 
