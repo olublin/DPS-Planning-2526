@@ -5,7 +5,7 @@
 The distance matrix folder contains two scripts, 'get_distances.py' for processing driving distances using isochrone branching courtesy of the openrouteservice API, and 'construct_matrix.py' for preprocessing the distances matrix to be used in the CFLP model.
 
 ---
-## Construct Distance Matrix
+## Construct Distance Matrix 🚌
 
 ### Purpose:
 
@@ -69,4 +69,4 @@ The next script takes these outputted distance matrix components to form the ful
 
 ---
 
-## Preprocess Matrix for Model
+## Preprocess Matrix for Model  📊
