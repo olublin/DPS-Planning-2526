@@ -13,7 +13,7 @@ The distance matrix folder contains two scripts, 'get_distances.py' for processi
 
 ### Requirements:
 
-This script uses the **openroutesource** library to compute driving isochrones. A basic plan can be made at [openrouteservice.org](openrouteservice.org). We ***strongly recommend*** requesting an upgraded plan, which can be granted for free for academic purposes. While the basic plan offers a quota of 500 isochrones/day and 20 isochrones/second, the upgraded plan quota includes 2500 isochrones/day and 40 isochrones/second. If the quota is maxed out each day, the basic plan can complete 20 planning units per day, versus 100 per day for the upgraded plan. For all 851 planning units, this makes a significance difference of over a month (9 days vs 43 days). A personal API key is required to run the script.
+This script uses the **openroutesource** library to compute driving isochrones. A basic plan can be made at [openrouteservice](openrouteservice.org). We ***strongly recommend*** requesting an upgraded plan, which can be granted for free for academic purposes. While the basic plan offers a quota of 500 isochrones/day and 20 isochrones/second, the upgraded plan quota includes 2500 isochrones/day and 40 isochrones/second. If the quota is maxed out each day, the basic plan can complete 20 planning units per day, versus 100 per day for the upgraded plan. For all 851 planning units, this makes a significance difference of over a month (9 days vs 43 days). A personal API key is required to run the script.
 
 ### Input File:
 
