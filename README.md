@@ -1,5 +1,8 @@
 # DPS-Planning-2526
-Collaborators: Leah Wallihan, Oliver Lublin, Kevan Wang
+
+![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm6QwtUnefiWRafxJEMVU0DHZuwVuumvxCsA&s)
+
+Collaborators: [Leah Wallihan](https://github.com/LtheWall00), [Oliver Lublin](https://github.com/olublin), [Kevan Wang](https://github.com/KevanWang05)
 
 Advised by Vitaly Radsky and Cameron Moore
 
