@@ -34,6 +34,17 @@ Running the `get_distances.py` file 100 planning units at a time is expected to 
 
 ### Assumptions:
 
+This script uses the method of isochrone branching to compute an estimated average distance between planning unit pairs. Our algorithm uses the following steps to approximate an average distance:
+
+1: Sets planning unit to branch from. A centroid for this planning unit is calculated, from which we branch out using openrouteservice's built in isochrone method. 
+
+2: Computes 1 minute isochrone from the centroid. This isochrone is the set of points that are within a 1 minute driving distance from the centroid. After computing the isochrone, determines what planning units have *any* part of their boundaries lying within the isochrone. These planning units are set to have a 1-minute distance to the initial planning unit (this of course includes the initial planning unit, so in the final matrix, M[i,i] = 1 for all i).
+
+3: Branches isochrones in 1 minute intervals. Makes a 2-minute, 3-minute, etc. isochrone. As before, planning units with any part of their boundaries within the 2-minute isochrone that are *not* within the 1-minute isochrone are set to have a 2-minute distance.
+
+4: The previous step is repeated from 1-minute isochrones to 20-minute isochrones, with an interval of 1 minute. Then, from 20 to 30 minutes, an interval of 2 minutes is set (as accuracy is less crucial for planning units this far out, since most will be assigned to a different school, at this method allows us to compute 100 full planning units in a day with the upgraded plan). After 30 minutes, the method stops branching isochrones and leaves remaining values (planning units >30 minutes away) as null. 
+
+The previous steps produce an 851x1 distance array for any given planning unit, providing all relevant distances to other planning units. The process repeats for all planning units from `lower_bound` to `upper_bound`, combining the arrays to produce a piece of the full distance matrix.
 
 
 ### Output File(s):
@@ -52,7 +63,7 @@ The `get_distances.py` script batches the matrix in 10 planning units at a time,
 
 The additional single planning unit file at the end is due to there being 851 planning units in total. The script will need to be adjusted slightly to obtain the final file.
 
-// Zip files together
+The next script takes these outputted distance matrix components to form the full distance matrix. **The user will need to zip all of the `.csv` files together and use the single zipped file as an input for the `construct_matrix.py` script.
 
 ---
 
